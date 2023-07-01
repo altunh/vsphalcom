@@ -8,7 +8,7 @@
     "vscode": "^1.79.0"
   },
   "repository": {
-    "url": ""
+    "url": "https://github.com/altunh/vsphalcom"
   },
   "categories": [
     "Programming Languages"
