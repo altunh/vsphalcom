@@ -7,6 +7,9 @@
   "engines": {
     "vscode": "^1.79.0"
   },
+  "repository": {
+    "url": ""
+  },
   "categories": [
     "Programming Languages"
   ],
