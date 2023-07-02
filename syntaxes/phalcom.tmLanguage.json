@@ -2,18 +2,13 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Phalcom",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#variables"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#phalcom.comment" },
+		{ "include": "#phalcom.string" },
+		{ "include": "#phalcom.keyword" },
+		{ "include": "#variables" }
 	],
 	"repository": {
-		"keywords": {
+		"phalcom.keyword": {
 			"patterns": [
 				{
 					"name": "keyword.control",
@@ -22,6 +17,31 @@
 				{
 					"name": "keyword.operator",
 					"match": "\\+\\+|--|\\+|-|\\*|/|%|==|!=|<|>|<=|>=|=>|->|=|\\+=|-=|/=|\\*=|%="
+				}
+			]
+		},
+		"phalcom.string": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\."
+				}
+			]
+		},
+		"phalcom.comment": {
+			"name": "comment",
+			"patterns": [
+				{
+					"name": "comment.line",
+					"match": "//.*"
+				},
+				{
+					"name": "comment.block",
+					"begin": "/\\*",
+					"end": "\\*/"
 				}
 			]
 		},
@@ -35,17 +55,6 @@
 				{
 					"name": "variable.other",
 					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
-				}
-			]
-		},
-		"strings": {
-			"name": "string.quoted.double",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape",
-					"match": "\\\\."
 				}
 			]
 		}
